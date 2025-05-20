@@ -1,4 +1,4 @@
-export { Header } from "./Header";
-export { ProductList } from "./ProductList";
-export { Products } from "./Products";
-export { CartList } from "./CartList";
+export { Header } from "./Header.jsx";
+export { Products } from "./Products.jsx";
+export { ProductList } from "./ProductList.jsx";
+export { CartList } from "./CartList.jsx";

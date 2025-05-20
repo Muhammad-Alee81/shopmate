@@ -1,8 +1,8 @@
 import { CartList } from "../components/index";
 import { useTitle } from "../hooks/useTitle";
-
 export const Cart = () => {
-  const cart = [
+    useTitle("Cart")
+  const cartProducts = [
     {
       id: 1,
       image:
@@ -18,12 +18,13 @@ export const Cart = () => {
       price: 678,
     },
   ];
-  useTitle("Cart");
   return (
-    <>
-      {cart.map((cartList) => {
-        return <CartList cartList = {cartList} />;
-      })}
-    </>
+    <div className="container h-screen ">
+      <div className="cart-container mt-20 ">
+        {cartProducts.map((cartP) => {
+          return <CartList key={cartP.id} cartProduct={cartP} />;
+        })}
+      </div>
+    </div>
   );
 };

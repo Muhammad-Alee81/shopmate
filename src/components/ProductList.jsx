@@ -1,5 +1,4 @@
 import { Products } from "./index";
-
 export const ProductList = () => {
   const products = [
     {
@@ -38,11 +37,11 @@ export const ProductList = () => {
     },
   ];
   return (
-    <div className="container">
+    <div className="container" >
       <div className="product-list flex gap-6 flex-wrap my-[50px]">
-        {products.map((product , i) => {
-          return <Products key={i} product={product} />;
-        })} 
+        {products.map((product) => {
+          return <Products key={product.id} product={product} />;
+        })}
       </div>
     </div>
   );

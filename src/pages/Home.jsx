@@ -1,11 +1,7 @@
-import { useEffect } from "react";
-import { ProductList } from "../components/index";
 import { useTitle } from "../hooks/useTitle";
+import { ProductList } from "../components/index";
+
 export const Home = () => {
   useTitle("Home");
-  return (
-    <>
-      <ProductList />
-    </>
-  );
+  return <ProductList />;
 };

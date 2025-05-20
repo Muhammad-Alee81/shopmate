@@ -1,24 +1,22 @@
-export const CartList = ({ image, title, price }) => {
-  return (
-    <>
-      <div className="container py-10">
-        <div className="cart-list flex justify-between items-center">
-          <div className="image w-[100px] ">
-            <img
-              src="https://a.storyblok.com/f/49568/3000x3000/65770f1602/logo.jpg/m/1600x0/filters:quality(80):format(jpeg)"
-              alt="loading...."
-            />
-          </div>
-          <div className="title text-[20px] font-bold mt-[10px] ">
-            <h2>title</h2>
-          </div>
+import React from "react";
 
-          <span className="text-1xl font-bold ">$:45</span>
-          <span className="bg-red-700 px-3 py-2 rounded text-white cursor-pointer  w-fit ">
-            Remove
-          </span>
-        </div>
+export const CartList = ({ cartProduct }) => {
+  const { image, title, price } = cartProduct;
+
+  return (
+    <div>
+      <div className="add-cart flex justify-between items-center  border-b-gray-500 border-b-1 py-4 ">
+        <img
+          className="w-[120px] h-[80px] rounded "
+          src={image}
+          alt="loading.."
+        />
+        <h2 className="font-bold">{title}</h2>
+        <h2 className="font-bold">$: {price}</h2>
+        <button className="bg-red-800 py-1 px-3.5 rounded text-white cursor-pointer ">
+          Remove
+        </button>
       </div>
-    </>
+    </div>
   );
 };

@@ -1,7 +1,7 @@
 import "./App.css";
+import { Header } from "./components/index";
+import { Home } from "./pages/Home";
 import { AllRoutes } from "./routes/AllRoutes";
-import { Header } from "./components/Header";
-
 export function App() {
   return (
     <>
