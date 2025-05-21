@@ -1,27 +1,16 @@
 import { CartList } from "../components/index";
 import { useTitle } from "../hooks/useTitle";
+import { useCart } from "../context/CartContext";
+
 export const Cart = () => {
-    useTitle("Cart")
-  const cartProducts = [
-    {
-      id: 1,
-      image:
-        "https://willya.de/wp-content/uploads/2018/09/Beats_by_Dre_Solo3_1.jpg",
-      title: "Sony WH-1000XM5 – Noise Cancelling, Wireless",
-      price: 10,
-    },
-    {
-      id: 2,
-      image:
-        "https://a.storyblok.com/f/49568/3000x3000/65770f1602/logo.jpg/m/1600x0/filters:quality(80):format(jpeg)",
-      title: "Bose QuietComfort 45 – Premium ANC, Wireless",
-      price: 678,
-    },
-  ];
+  useTitle("Cart");
+  const { cartList, total } = useCart();
+
   return (
     <div className="container h-screen ">
+      <h2 className="text-center font-bold mt-10">Sub Total : ${total}</h2>
       <div className="cart-container mt-20 ">
-        {cartProducts.map((cartP) => {
+        {cartList.map((cartP) => {
           return <CartList key={cartP.id} cartProduct={cartP} />;
         })}
       </div>
